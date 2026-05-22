@@ -1,7 +1,6 @@
-﻿# AI-Agent-Aoto-Deployer-for-AWS
 # Prompt-to-Cloud 🚀
 
-<details open>
+<details>
 <summary><b>🇹🇼 繁體中文</b></summary>
 
 ## 簡介

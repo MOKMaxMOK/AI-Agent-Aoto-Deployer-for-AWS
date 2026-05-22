@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI 雲端部署實驗站</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">✨ AI 雲端部署實驗站</h1>
+            <p class="app-subtitle">定義資源組、綁定 AI，三階段自動部署完整應用</p>
+        </header>
+
+        <!-- 資源組區塊（可折疊） -->
+        <section class="card collapsible" id="resourceSection">
+            <div class="card-header" data-target="resourceBody">
+                <div class="card-title">
+                    <span class="icon">📦</span> 資源組 <span class="badge" id="groupCount">0</span>
+                </div>
+                <button class="toggle-btn">▲</button>
+            </div>
+            <div class="card-body" id="resourceBody">
+                <div id="resourceGroupsList" class="resource-list"></div>
+                <button class="btn btn-add" id="addGroupBtn">＋ 新增資源組</button>
+            </div>
+        </section>
+
+        <!-- AI 設定區塊（可折疊） -->
+        <section class="card collapsible" id="aiSection">
+            <div class="card-header" data-target="aiBody">
+                <div class="card-title">
+                    <span class="icon">🧠</span> AI 模型設定
+                </div>
+                <button class="toggle-btn">▲</button>
+            </div>
+            <div class="card-body" id="aiBody">
+                <div class="ai-block">
+                    <h3>架構生成 AI</h3>
+                    <div class="form-group">
+                        <label>API 端點</label>
+                        <input type="text" id="architectEndpoint"
+                            placeholder="https://openrouter.ai/api/v1/chat/completions">
+                    </div>
+                    <div class="form-group">
+                        <label>模型</label>
+                        <input type="text" id="architectModel" placeholder="deepseek/deepseek-chat">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="password" id="architectKey" placeholder="sk-or-v1-...">
+                    </div>
+                </div>
+                <div class="ai-block">
+                    <h3>基礎設施部署 AI</h3>
+                    <div class="form-group">
+                        <label>API 端點</label>
+                        <input type="text" id="deployEndpoint"
+                            placeholder="https://openrouter.ai/api/v1/chat/completions">
+                    </div>
+                    <div class="form-group">
+                        <label>模型</label>
+                        <input type="text" id="deployModel" placeholder="deepseek/deepseek-chat">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="password" id="deployKey" placeholder="sk-or-v1-...">
+                    </div>
+                </div>
+                <div class="ai-block">
+                    <h3>程式碼生成 AI</h3>
+                    <div class="form-group">
+                        <label>API 端點</label>
+                        <input type="text" id="codeEndpoint"
+                            placeholder="https://openrouter.ai/api/v1/chat/completions">
+                    </div>
+                    <div class="form-group">
+                        <label>模型</label>
+                        <input type="text" id="codeModel" placeholder="deepseek/deepseek-chat">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="password" id="codeKey" placeholder="sk-or-v1-...">
+                    </div>
+                </div>
+                
+                <div class="ai-block">
+                    <h3>助手 AI</h3>
+                    <div class="form-group">
+                        <label>API 端點</label>
+                        <input type="text" id="assistantEndpoint"
+                            placeholder="https://openrouter.ai/api/v1/chat/completions">
+                    </div>
+                    <div class="form-group">
+                        <label>模型</label>
+                        <input type="text" id="assistantModel" placeholder="deepseek/deepseek-chat">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input type="password" id="assistantKey" placeholder="sk-or-v1-...">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button class="btn btn-primary" id="saveAIBtn">儲存設定</button>
+                    <button class="btn btn-danger" id="resetAIBtn">重置設定</button>
+                </div>
+            </div>
+        </section>
+
+        <!-- 部署主介面（始終展開） -->
+        <section class="card">
+            <div class="card-header">
+                <div class="card-title">
+                    <span class="icon">🚀</span> 部署任務
+                </div>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>選擇資源組（可複選）</label>
+                    <div id="deployGroupSelector" class="checkbox-list"></div>
+                </div>
+                <div class="form-group">
+                    <label>部署描述（自然語言）</label>
+                    <textarea id="description" rows="4"
+                        placeholder="描述你的部署需求"></textarea>
+                </div>
+                <button class="btn btn-primary btn-large" id="deployBtn">🚀 開始架構分析</button>
+
+                <!-- 進度條區域 -->
+                <div id="progressArea" style="display:none; margin-top:1rem;">
+                    <div class="progress-bar">
+                        <div class="progress-fill" id="progressFill" style="width: 0%;"></div>
+                    </div>
+                    <p id="progressText" style="margin-top:0.5rem; color:var(--accent);">準備中...</p>
+                </div>
+
+                <!-- 結果展示區域 -->
+                <div id="result" class="result-box"></div>
+
+                <!-- 確認/追問區域（動態插入） -->
+                <div id="confirmArea" style="display:none; margin-top:1rem;"></div>
+            </div>
+        </section>
+    </div>
+
+    <!-- 懸浮助手球 -->
+    <div class="floating-ball" id="floatingBall">💬</div>
+    <div class="chat-panel" id="chatPanel">
+        <div class="chat-header">
+            <h4>🤖 AI 小助手</h4>
+            <button class="chat-close" id="chatClose">✕</button>
+        </div>
+        <div class="chat-messages" id="chatMessages">
+            <div class="message assistant">👋 你好！有任何 AWS 或部署問題都可以問我。</div>
+        </div>
+        <div class="chat-input-area">
+            <input type="text" id="chatInput" placeholder="輸入訊息...">
+            <button id="chatSendBtn">傳送</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>AI Cloud Deployment Lab</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <div class="app-container">
+        <header class="app-header">
+            <h1 class="app-title">✨ AI Cloud Deployment Lab</h1>
+            <p class="app-subtitle">Define resource groups, bind AI, and automatically deploy complete applications in
+                three stages</p>
+        </header>
+
+        <!-- Resource Groups -->
+        <div class="card collapsible">
+            <div class="card-header">
+                <div class="card-title">📦 Resource Groups <span id="groupCount" class="badge">0</span></div>
+                <button class="toggle-btn">▲</button>
+            </div>
+            <div class="card-body">
+                <button id="addGroupBtn" class="btn btn-add">＋ New Resource Group</button>
+                <div id="resourceGroupsList" class="resource-list"></div>
+            </div>
+        </div>
+
+        <!-- AI Configuration -->
+        <div class="card collapsible">
+            <div class="card-header">
+                <div class="card-title">🧠 AI Model Configuration</div>
+                <button class="toggle-btn">▲</button>
+            </div>
+            <div class="card-body">
+                <div class="ai-block">
+                    <h3>Architecture Generation AI</h3>
+                    <div class="form-group">
+                        <label>API Endpoint</label>
+                        <input id="architectEndpoint" type="text" placeholder="Enter endpoint URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input id="architectModel" type="text" placeholder="e.g., gpt-4o">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input id="architectKey" type="password" placeholder="sk-...">
+                    </div>
+                </div>
+                <div class="ai-block">
+                    <h3>Infrastructure Deployment AI</h3>
+                    <div class="form-group">
+                        <label>API Endpoint</label>
+                        <input id="deployEndpoint" type="text" placeholder="Enter endpoint URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input id="deployModel" type="text" placeholder="e.g., claude-3-sonnet">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input id="deployKey" type="password" placeholder="sk-...">
+                    </div>
+                </div>
+                <div class="ai-block">
+                    <h3>Code Generation AI</h3>
+                    <div class="form-group">
+                        <label>API Endpoint</label>
+                        <input id="codeEndpoint" type="text" placeholder="Enter endpoint URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input id="codeModel" type="text" placeholder="e.g., gpt-4o">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input id="codeKey" type="password" placeholder="sk-...">
+                    </div>
+                </div>
+                <div class="ai-block">
+                    <h3>Assistant AI</h3>
+                    <div class="form-group">
+                        <label>API Endpoint</label>
+                        <input id="assistantEndpoint" type="text" placeholder="Enter endpoint URL">
+                    </div>
+                    <div class="form-group">
+                        <label>Model</label>
+                        <input id="assistantModel" type="text" placeholder="e.g., gpt-4o-mini">
+                    </div>
+                    <div class="form-group">
+                        <label>API Key</label>
+                        <input id="assistantKey" type="password" placeholder="sk-...">
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <button id="saveAIBtn" class="btn btn-primary">Save Settings</button>
+                    <button id="resetAIBtn" class="btn">Reset Settings</button>
+                </div>
+            </div>
+        </div>
+
+        <!-- Deployment Task -->
+        <div class="card collapsible">
+            <div class="card-header">
+                <div class="card-title">🚀 Deployment Task</div>
+                <button class="toggle-btn">▲</button>
+            </div>
+            <div class="card-body">
+                <div class="form-group">
+                    <label>Select Resource Groups (Multi-select)</label>
+                    <div id="deployGroupSelector"></div>
+                </div>
+                <div class="form-group">
+                    <label>Deployment Description (Natural Language)</label>
+                    <textarea id="description" rows="3" placeholder="Describe what you want to deploy..."></textarea>
+                </div>
+                <button id="deployBtn" class="btn btn-primary btn-large">🚀 Start Architecture Analysis</button>
+            </div>
+        </div>
+
+        <!-- Progress & Results -->
+        <div id="progressArea" class="card" style="display:none;">
+            <div id="progressText" style="padding: 0.5rem 1rem; font-size: 0.9rem; color: var(--text-secondary);">
+                Preparing...</div>
+            <div class="progress-bar">
+                <div id="progressFill" class="progress-fill" style="width: 0%;"></div>
+            </div>
+        </div>
+
+        <div id="result" class="result-box" style="display:none;"></div>
+        <div id="confirmArea" style="display:none;"></div>
+    </div>
+
+    <!-- Floating Assistant -->
+    <div id="floatingBall" class="floating-ball">💬</div>
+    <div id="chatPanel" class="chat-panel">
+        <div class="chat-header">
+            🤖 AI Assistant
+            <button id="chatClose" class="chat-close">✕</button>
+        </div>
+        <div id="chatMessages" class="chat-messages"></div>
+        <div class="chat-input-area">
+            <input id="chatInput" type="text" placeholder="Type your question...">
+            <button id="chatSendBtn">Send</button>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+
+</html>

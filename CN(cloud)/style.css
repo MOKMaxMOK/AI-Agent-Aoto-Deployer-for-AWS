@@ -1,0 +1,566 @@
+/* ====== 基礎設定 ====== */
+:root {
+    --bg: #faf7f2;
+    --card-bg: #ffffff;
+    --text: #3e3a37;
+    --text-secondary: #6b6560;
+    --accent: #e07b5a;
+    --accent-light: #fbe4d8;
+    --border: #e9e2d8;
+    --shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+    --radius: 18px;
+    --transition: 0.25s ease;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Inter', system-ui, -apple-system, sans-serif;
+    background: var(--bg);
+    color: var(--text);
+    min-height: 100vh;
+    padding: 2rem 1rem;
+    line-height: 1.6;
+}
+
+.app-container {
+    max-width: 800px;
+    margin: 0 auto;
+}
+
+/* 頁首 */
+.app-header {
+    text-align: center;
+    margin-bottom: 2.2rem;
+}
+
+.app-title {
+    font-size: 2.2rem;
+    font-weight: 700;
+    color: #3e3a37;
+    margin-bottom: 0.3rem;
+}
+
+.app-subtitle {
+    color: var(--text-secondary);
+    font-size: 0.95rem;
+}
+
+/* 卡片 */
+.card {
+    background: var(--card-bg);
+    border-radius: var(--radius);
+    border: 1px solid var(--border);
+    box-shadow: var(--shadow);
+    margin-bottom: 1.5rem;
+    overflow: hidden;
+    transition: box-shadow var(--transition);
+}
+
+.card:hover {
+    box-shadow: 0 6px 28px rgba(0, 0, 0, 0.08);
+}
+
+.card-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1.2rem 1.5rem;
+    cursor: pointer;
+    user-select: none;
+}
+
+.card-header .card-title {
+    font-weight: 600;
+    font-size: 1.1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+}
+
+.icon {
+    font-size: 1.3rem;
+}
+
+.badge {
+    background: var(--accent-light);
+    color: var(--accent);
+    border-radius: 12px;
+    padding: 0.15rem 0.6rem;
+    font-size: 0.8rem;
+    font-weight: 600;
+    margin-left: 0.4rem;
+}
+
+.toggle-btn {
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: var(--text-secondary);
+    cursor: pointer;
+    transition: transform var(--transition);
+}
+
+.collapsible .card-body {
+    display: block;
+    border-top: 1px solid var(--border);
+    padding: 0 1.5rem 1.5rem 1.5rem;
+}
+
+.collapsible.collapsed .card-body {
+    display: none;
+}
+
+.collapsible.collapsed .toggle-btn {
+    transform: rotate(180deg);
+}
+
+/* 表單元素 */
+.form-group {
+    margin-bottom: 1rem;
+}
+
+label {
+    display: block;
+    font-size: 0.85rem;
+    font-weight: 500;
+    color: var(--text-secondary);
+    margin-bottom: 0.3rem;
+}
+
+input,
+textarea {
+    width: 100%;
+    padding: 0.7rem 1rem;
+    border: 1px solid var(--border);
+    border-radius: 12px;
+    background: #fdfcfb;
+    font-family: inherit;
+    font-size: 0.9rem;
+    color: var(--text);
+    transition: border-color var(--transition);
+    outline: none;
+}
+
+input:focus,
+textarea:focus {
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px rgba(224, 123, 90, 0.1);
+}
+
+textarea {
+    min-height: 90px;
+    resize: vertical;
+}
+
+/* 按鈕 */
+.btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    padding: 0.6rem 1.4rem;
+    border-radius: 12px;
+    font-weight: 500;
+    font-size: 0.9rem;
+    cursor: pointer;
+    border: none;
+    transition: all var(--transition);
+    background: #f2ede8;
+    color: var(--text);
+}
+
+.btn:hover {
+    background: #e5ddd4;
+}
+
+.btn-primary {
+    background: var(--accent);
+    color: white;
+    box-shadow: 0 4px 14px rgba(224, 123, 90, 0.25);
+}
+
+.btn-primary:hover {
+    background: #d16a47;
+    box-shadow: 0 6px 18px rgba(224, 123, 90, 0.35);
+}
+
+.btn-danger {
+    background: #ffe9e6;
+    color: #c43f27;
+}
+
+.btn-danger:hover {
+    background: #ffd6cf;
+}
+
+.btn-add {
+    width: 100%;
+    margin-top: 0.5rem;
+    background: #f5f0eb;
+    color: var(--accent);
+    font-weight: 600;
+}
+
+.btn-large {
+    width: 100%;
+    padding: 0.9rem;
+    font-size: 1rem;
+    margin-top: 0.8rem;
+}
+
+.btn-group {
+    display: flex;
+    gap: 0.8rem;
+    margin-top: 1.5rem;
+}
+
+/* 資源組卡片化排版 */
+.resource-list {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.resource-item {
+    background: #fdfcfb;
+    border: 1px solid var(--border);
+    border-radius: 14px;
+    padding: 1rem 1.2rem;
+    display: flex;
+    flex-direction: column;
+}
+
+.resource-main {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-start;
+}
+
+.resource-info {
+    flex: 1;
+}
+
+.resource-name {
+    font-weight: 600;
+    font-size: 1.05rem;
+    margin-bottom: 0.3rem;
+}
+
+.resource-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+}
+
+.meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.2rem;
+}
+
+.resource-actions {
+    display: flex;
+    gap: 0.4rem;
+    flex-shrink: 0;
+    margin-left: 1rem;
+}
+
+.btn-sm {
+    padding: 0.4rem 0.8rem;
+    font-size: 0.8rem;
+    border-radius: 8px;
+}
+
+.edit-form {
+    display: none;
+    margin-top: 0.8rem;
+    padding: 1rem;
+    background: #f9f7f4;
+    border-radius: 12px;
+    border: 1px solid var(--border);
+}
+
+.edit-form.active {
+    display: block;
+}
+
+/* AI 區塊 */
+.ai-block {
+    background: #faf8f5;
+    border-radius: 14px;
+    padding: 1.2rem;
+    margin-bottom: 1rem;
+}
+
+.ai-block h3 {
+    font-size: 0.95rem;
+    margin-bottom: 0.8rem;
+    color: var(--accent);
+}
+
+/* 部署區選擇器 */
+.resource-select-card {
+    display: flex;
+    align-items: center;
+    gap: 0.8rem;
+    padding: 0.8rem 1rem;
+    background: #fdfcfb;
+    border: 2px solid var(--border);
+    border-radius: 14px;
+    cursor: pointer;
+    transition: all 0.2s;
+    margin-bottom: 0.5rem;
+}
+
+.resource-select-card:hover {
+    border-color: var(--accent);
+    background: #fff5f0;
+}
+
+.resource-select-card input[type="checkbox"] {
+    width: 1.2rem;
+    height: 1.2rem;
+    accent-color: var(--accent);
+    flex-shrink: 0;
+}
+
+.select-card-body {
+    flex: 1;
+}
+
+.select-card-title {
+    font-weight: 600;
+    margin-bottom: 0.2rem;
+}
+
+.select-card-meta {
+    font-size: 0.85rem;
+    color: var(--text-secondary);
+    display: flex;
+    gap: 1rem;
+}
+
+/* 选中状态高亮 */
+.resource-select-card input:checked+.select-card-body {
+    background: rgba(224, 123, 90, 0.05);
+}
+.result-box {
+    margin-top: 1.5rem;
+    padding: 1rem;
+    background: #f5f1ec;
+    border-radius: 12px;
+    font-size: 0.85rem;
+    white-space: pre-wrap;
+    display: none;
+}
+
+/* 進度條 */
+.progress-bar {
+    height: 8px;
+    background: #e9e2d8;
+    border-radius: 8px;
+    overflow: hidden;
+    margin-top: 0.5rem;
+}
+
+.progress-fill {
+    height: 100%;
+    background: var(--accent);
+    border-radius: 8px;
+    transition: width 0.3s ease;
+}
+
+/* 懸浮球與聊天面板（保持原有設計，僅調整色調） */
+.floating-ball {
+    position: fixed;
+    bottom: 2rem;
+    right: 2rem;
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: var(--accent);
+    box-shadow: 0 8px 24px rgba(224, 123, 90, 0.4);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.8rem;
+    color: white;
+    cursor: pointer;
+    z-index: 1000;
+    transition: transform 0.2s;
+    user-select: none;
+}
+
+.floating-ball.hidden {
+    opacity: 0;
+    pointer-events: none;
+}
+
+.floating-ball:hover {
+    transform: scale(1.1);
+}
+
+/* 大型助手面板 */
+.chat-panel {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: 100%;
+    height: 75vh;
+    background: white;
+    border-radius: 24px 24px 0 0;
+    box-shadow: 0 -10px 40px rgba(0, 0, 0, 0.2);
+    display: flex;
+    flex-direction: column;
+    z-index: 1001;
+    transform: translateY(100%);
+    transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.chat-panel.active {
+    transform: translateY(0);
+}
+
+.chat-header {
+    padding: 1rem 1.5rem;
+    border-bottom: 1px solid var(--border);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    background: #fdfcfb;
+    border-radius: 24px 24px 0 0;
+}
+
+.chat-close {
+    background: none;
+    border: none;
+    font-size: 1.5rem;
+    cursor: pointer;
+    color: var(--text-secondary);
+}
+
+.chat-messages {
+    flex: 1;
+    overflow-y: auto;
+    padding: 1.5rem;
+    background: #faf8f5;
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+}
+
+.message {
+    max-width: 85%;
+    padding: 0.6rem 0.9rem;
+    border-radius: 12px;
+    font-size: 0.9rem;
+    line-height: 1.5;
+    position: relative;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+.message.user {
+    align-self: flex-end;
+    background: var(--accent);
+    color: white;
+    border-bottom-right-radius: 4px;
+}
+
+.message.assistant {
+    align-self: flex-start;
+    background: white;
+    border: 1px solid var(--border);
+    color: var(--text);
+    border-bottom-left-radius: 4px;
+}
+
+.message-copy-btn {
+    position: absolute;
+    top: 0.3rem;
+    right: 0.3rem;
+    background: rgba(0, 0, 0, 0.05);
+    border: none;
+    border-radius: 6px;
+    padding: 0.2rem 0.4rem;
+    font-size: 0.75rem;
+    cursor: pointer;
+    opacity: 0;
+    transition: opacity 0.2s;
+    color: var(--text-secondary);
+}
+
+.message:hover .message-copy-btn {
+    opacity: 1;
+}
+
+.message.user .message-copy-btn {
+    background: rgba(255, 255, 255, 0.2);
+    color: white;
+}
+
+.code-block {
+    background: #2d2d2d;
+    color: #f8f8f2;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    overflow: hidden;
+}
+
+.code-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.3rem 0.8rem;
+    background: #3a3a3a;
+    font-size: 0.75rem;
+    color: #ccc;
+}
+
+.code-copy-btn {
+    background: #555;
+    border: none;
+    color: white;
+    padding: 0.15rem 0.5rem;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 0.7rem;
+}
+
+.code-content {
+    padding: 0.8rem;
+    overflow-x: auto;
+    font-family: 'Courier New', monospace;
+    font-size: 0.85rem;
+    white-space: pre;
+}
+
+.chat-input-area {
+    display: flex;
+    padding: 1rem 1.5rem;
+    background: white;
+    border-top: 1px solid var(--border);
+    gap: 0.5rem;
+}
+
+.chat-input-area input {
+    flex: 1;
+    margin-bottom: 0;
+}
+
+.chat-input-area button {
+    background: var(--accent);
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 0 1.2rem;
+    cursor: pointer;
+    font-weight: 500;
+}

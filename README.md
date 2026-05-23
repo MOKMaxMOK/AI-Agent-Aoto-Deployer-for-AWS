@@ -22,6 +22,8 @@
 - 區域（Region）
 - 可用的 AWS 服務清單（例如 EC2、S3、Lambda）
 你可以建立多個資源組，部署時勾選要使用的組別，AI 就會在對應的帳號中建立資源。
+<img width="865" height="695" alt="image" src="https://github.com/user-attachments/assets/66cfc81a-9f67-4617-b941-823943302d5f" />
+
 
 ### 🧠 AI 設定
 你需要為三個 AI 角色分別設定 API 端點、模型名稱與 API Key：
@@ -31,9 +33,11 @@
 <img width="865" height="800" alt="image" src="https://github.com/user-attachments/assets/70eae1e1-7591-438f-a7e3-80e46b7cc6e2" />
 另有一個 **助手 AI**（懸浮球），可隨時提問雲端架構相關問題。
 
+
 ### 🚀 部署流程
 1. **選擇資源組**：勾選你要部署到的 AWS 帳號
 <img width="865" height="447" alt="image" src="https://github.com/user-attachments/assets/fe398af6-2064-4eb0-8e0d-39059967bcaa" />
+
 
 2. **輸入需求描述**：用自然語言寫下你想部署什麼（例如「部署一個計時器網站」）
 <img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/bbf03c20-82bc-4c95-9080-e9559c425d59" />
@@ -41,6 +45,7 @@
 
 4. **確認架構**：你可以直接確認，或輸入修改意見
 <img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/330cb7bd-b285-4d20-8d0c-8c2e53a2c775" />
+
 
 5. **點擊部署**：系統會依序建立基礎設施、生成並上傳程式碼
 <img width="865" height="516" alt="image" src="https://github.com/user-attachments/assets/0e8b8094-a940-417a-af9d-0ac299f3f00a" />
@@ -74,24 +79,36 @@
 - AWS 访问密钥（Access Key / Secret Key）
 - 区域（Region）
 - 可用的 AWS 服务清单（例如 EC2、S3、Lambda）
-
 你可以创建多个资源组，部署时勾选要使用的组别，AI 就会在对应的账号中创建资源。
+<img width="865" height="695" alt="image" src="https://github.com/user-attachments/assets/8c5708d0-9608-4691-9be8-dbeb9420ac6d" />
+
+
 
 ### 🧠 AI 设置
 你需要为三个 AI 角色分别设置 API 端点、模型名称与 API Key：
 - **架构生成 AI**：负责理解需求、规划架构
 - **基础设施部署 AI**：负责生成 CloudFormation 模板
 - **代码生成 AI**：负责生成网站前端、后端代码
+<img width="865" height="800" alt="image" src="https://github.com/user-attachments/assets/639495bb-29a5-43cb-927a-c073047f69c9" />
 
 另有一个 **助手 AI**（悬浮球），可随时提问云端架构相关问题。
 
 ### 🚀 部署流程
 1. **选择资源组**：勾选你要部署到的 AWS 账号
+<img width="865" height="447" alt="image" src="https://github.com/user-attachments/assets/66fd95ac-610b-40f2-bba7-72ba178cb66f" />
+
 2. **输入需求描述**：用自然语言写下你想部署什么（例如“部署一个计时器网站”）
+<img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/5c4d4377-6ddf-4caa-85dc-570570b2f81a" />
+
 3. **开始架构分析**：AI 会先分析你的需求并显示架构计划
+<img width="865" height="516" alt="image" src="https://github.com/user-attachments/assets/43fbd63f-ffa1-44cb-a6a3-cabec63df588" />
+
 4. **确认架构**：你可以直接确认，或输入修改意见
 5. **点击部署**：系统会依次创建基础设施、生成并上传代码
+<img width="865" height="665" alt="image" src="https://github.com/user-attachments/assets/cba17903-9a85-4988-9469-d9b43d58a724" />
+
 6. **等待结果**：部署完成后，你会看到网站 URL、API 端点、资源清单及 CloudFormation 链接
+<img width="865" height="747" alt="image" src="https://github.com/user-attachments/assets/e6d22628-deb1-4756-a67f-2bcc4647a5b6" />
 
 所有步骤都有进度条显示，失败时会显示人类可读的错误原因。
 
@@ -118,6 +135,7 @@ A resource group bundles together:
 - AWS access keys (Access Key / Secret Key)
 - Region
 - List of allowed AWS services (e.g., EC2, S3, Lambda)
+<img width="865" height="695" alt="image" src="https://github.com/user-attachments/assets/5547f472-771f-4370-ae2e-176defebb5f3" />
 
 You can create multiple resource groups and select which ones to use for a deployment.
 
@@ -126,16 +144,26 @@ You supply an API endpoint, model name, and API key for each AI role:
 - **Architecture AI** – Understands requirements and plans infrastructure
 - **Infrastructure Deployment AI** – Generates CloudFormation templates
 - **Code Generation AI** – Creates frontend and backend code
+<img width="865" height="800" alt="image" src="https://github.com/user-attachments/assets/f3020d65-f507-4f4b-8f27-de4cbed0b1bf" />
 
 A floating **Assistant AI** widget is also available for ad‑hoc cloud architecture questions.
 
 ### 🚀 Deployment Flow
 1. **Select resource groups** – Choose which AWS accounts to deploy to
+<img width="865" height="447" alt="image" src="https://github.com/user-attachments/assets/91642418-de1b-462e-8ef4-25ec90467aa7" />
+
 2. **Write a description** – Describe what you want in plain language
 3. **Run architecture analysis** – The AI proposes an architecture plan
+<img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/526e4bd4-127a-482b-a0a6-a6e1d69cab83" />
+
 4. **Confirm or refine** – Accept the plan or provide modification requests
 5. **Deploy** – Infrastructure is provisioned, code is generated and uploaded automatically
+<img width="865" height="516" alt="image" src="https://github.com/user-attachments/assets/2e6916ab-2b08-4d0c-9547-af8d56625a38" />
+<img width="865" height="665" alt="image" src="https://github.com/user-attachments/assets/6b770fc5-1292-4963-bf12-72604a2056cf" />
+
+
 6. **Get results** – View the website URL, API endpoint, resource list, and a link to the CloudFormation stack
+<img width="865" height="747" alt="image" src="https://github.com/user-attachments/assets/563dc2c5-69e2-4cb7-9ddf-6aa965157103" />
 
 A progress bar keeps you informed at every stage, and any failures are explained in clear, human-readable messages.
 

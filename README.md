@@ -7,6 +7,23 @@ these are three Language version English, 繁體中文， 簡體中文
 ## 簡介
 **Prompt-to-Cloud** 是一個全自動的 AI 雲端部署實驗平台。你只需要用自然語言描述你想部署的應用，AI 就會依序完成架構設計、CloudFormation 模板生成、基礎設施部署、程式碼生成與上傳，最終給你一個可以直接訪問的網站或 API。
 
+**在本機運行**  
+使用檔案 `backend(local).py`。安裝依賴並啟動服務：
+```
+pip install flask boto3
+python backend(local).py
+```
+本機伺服器監聽 `http://localhost:5000`。開啟 `script.js`，設定：
+```javascript
+const LAMBDA_URL = 'http://localhost:5000/';
+```
+
+**部署到雲端（建議使用 AWS Lambda）**  
+將 `backend(in cloud).py` 上傳到 AWS Lambda。建立 Function URL 並將 `AuthType` 設為 `NONE`。複製端點網址，更新 `script.js`：
+```javascript
+const LAMBDA_URL = 'https://your-unique-id.lambda-url.region.on.aws/';
+```
+
 ## 原理
 整個平台由三個 AI 角色協作完成部署：
 1. **架構生成 AI**：分析你的需求，決定需要哪些雲端資源，並輸出架構圖（文字描述）與資源清單。
@@ -64,6 +81,23 @@ these are three Language version English, 繁體中文， 簡體中文
 ## 简介
 **Prompt-to-Cloud** 是一个全自动的 AI 云端部署实验平台。你只需要用自然语言描述你想部署的应用，AI 就会依次完成架构设计、CloudFormation 模板生成、基础设施部署、代码生成与上传，最终给你一个可以直接访问的网站或 API。
 
+**本地运行**  
+使用文件 `backend(local).py`。安装依赖并启动服务：
+```
+pip install flask boto3
+python backend(local).py
+```
+本地服务器监听地址为 `http://localhost:5000`。打开 `script.js`，设置：
+```javascript
+const LAMBDA_URL = 'http://localhost:5000/';
+```
+
+**部署到云端（推荐 AWS Lambda）**  
+将 `backend(in cloud).py` 上传到 AWS Lambda。创建 Function URL 并将 `AuthType` 设为 `NONE`。复制端点地址，更新 `script.js`：
+```javascript
+const LAMBDA_URL = 'https://your-unique-id.lambda-url.region.on.aws/';
+```
+
 ## 原理
 整个平台由三个 AI 角色协作完成部署：
 1. **架构生成 AI**：分析你的需求，决定需要哪些云端资源，并输出架构图（文字描述）与资源清单。
@@ -119,6 +153,23 @@ these are three Language version English, 繁體中文， 簡體中文
 
 ## Introduction
 **Prompt-to-Cloud** is a fully automated AI cloud deployment lab. Simply describe the application you want in natural language, and the AI will sequentially handle architecture design, CloudFormation template generation, infrastructure provisioning, code generation, and upload – delivering a live website or API ready to use.
+
+**Run Locally**  
+Use `backend(local).py`. Install dependencies and start the server:
+```
+pip install flask boto3
+python backend(local).py
+```
+The local server listens at `http://localhost:5000`. Open `script.js` and set:
+```javascript
+const LAMBDA_URL = 'http://localhost:5000/';
+```
+
+**Deploy to Cloud (AWS Lambda recommended)**  
+Upload `backend(in cloud).py` to AWS Lambda. Create a Function URL with `AuthType = NONE`. Copy the endpoint and update `script.js`:
+```javascript
+const LAMBDA_URL = 'https://your-unique-id.lambda-url.region.on.aws/';
+```
 
 ## How It Works
 Three AI roles collaborate throughout the deployment:

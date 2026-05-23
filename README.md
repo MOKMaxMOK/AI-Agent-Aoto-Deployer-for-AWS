@@ -1,4 +1,5 @@
 # Prompt-to-Cloud 🚀
+these are three Language version English, 繁體中文， 簡體中文
 
 <details>
 <summary><b>🇹🇼 繁體中文</b></summary>

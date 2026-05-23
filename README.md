@@ -1,4 +1,4 @@
-<img width="865" height="447" alt="image" src="https://github.com/user-attachments/assets/11b74f46-6093-4379-bc3e-c6f265f285f3" /># Prompt-to-Cloud 🚀
+# Prompt-to-Cloud 🚀
 
 <details>
 <summary><b>🇹🇼 繁體中文</b></summary>
@@ -21,7 +21,6 @@
 - AWS 存取金鑰（Access Key / Secret Key）
 - 區域（Region）
 - 可用的 AWS 服務清單（例如 EC2、S3、Lambda）
-<img width="865" height="695" alt="image" src="https://github.com/user-attachments/assets/3c8a78d8-dc57-4eeb-9fbd-e7fdb48e03d7" />
 你可以建立多個資源組，部署時勾選要使用的組別，AI 就會在對應的帳號中建立資源。
 
 ### 🧠 AI 設定

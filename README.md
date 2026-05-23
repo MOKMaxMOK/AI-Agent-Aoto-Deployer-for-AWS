@@ -42,13 +42,12 @@
 2. **輸入需求描述**：用自然語言寫下你想部署什麼（例如「部署一個計時器網站」）
 <img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/bbf03c20-82bc-4c95-9080-e9559c425d59" />
 3. **開始架構分析**：AI 會先分析你的需求並顯示架構計畫
-
-4. **確認架構**：你可以直接確認，或輸入修改意見
 <img width="865" height="698" alt="image" src="https://github.com/user-attachments/assets/330cb7bd-b285-4d20-8d0c-8c2e53a2c775" />
-
+4. **確認架構**：你可以直接確認，或輸入修改意見
+<img width="865" height="516" alt="image" src="https://github.com/user-attachments/assets/0e8b8094-a940-417a-af9d-0ac299f3f00a" />
 
 5. **點擊部署**：系統會依序建立基礎設施、生成並上傳程式碼
-<img width="865" height="516" alt="image" src="https://github.com/user-attachments/assets/0e8b8094-a940-417a-af9d-0ac299f3f00a" />
+
 <img width="865" height="665" alt="image" src="https://github.com/user-attachments/assets/1946b9bf-d446-4d78-aa50-941da6bb61f8" />
 
 6. **等待結果**：部署完成後，你會看到網站 URL、API 端點、資源清單及 CloudFormation 連結
